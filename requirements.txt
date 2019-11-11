@@ -1,0 +1,11 @@
+#需要安装的环境
+#python库
+flask
+pymysql
+requests
+pillow
+pytesseract
+lxml
+opencv-python
+#js环境 安装nodejs软件并配置系统环境
+#pytesseract环境 安装tesseract-ocr软件并配置系统环境
