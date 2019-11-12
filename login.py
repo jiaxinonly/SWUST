@@ -1,6 +1,6 @@
 # 登录一站式服务大厅
 import requests
-from RSA_password import get_password
+from RSA_password import *
 import re
 from url_data import *
 from lxml import etree
@@ -37,9 +37,8 @@ def login_server(username, password, login):  # 登录服务大厅
             # print('获取密钥')
             key = re.search('[0-9a-zA-Z]{256}', response_key.text).group()  # 正则匹配公钥
             # print('加密中')
-            rsa_password = get_password(password, key)  # 使用公钥加密密码
+            rsa_password = encrypt(password, key)  # 使用公钥加密密码
             # print('加密成功')
-            rsa_password = rsa_password.replace('\n', '')  # 去掉多余字符
             data = {
                 'execution': execution,
                 '_eventId': 'submit',
